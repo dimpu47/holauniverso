@@ -1,9 +1,12 @@
-var http = require('http');
+var express = require('express');
+var app = express();
 
-var server = http.createServer(function (req, res) {
-    res.writeHead({'Content-Type': 'text/html'});
-    res.end('<br><h1><center><hr><hr><br>( ~_o_^_o_~ )<br>||<h2><br>Gracioso Universo!</h2><br></center></h1><hr><hr>');
+
+app.get('/', function (req, res) {
+    res.send('<nav><center><hr><hr><p3>( ~o^o~ )</p3><h3>Gracias Universo... ;) </h3><span></span></center><hr><hr></nav>');
 });
 
-var port = Number(process.env.PORT || 4444);
-server.listen(port);
+var port = (process.env.PORT || 4444);
+app.listen(port, function () {
+console.log('Running on port ' + port + '--..--{`-0-^-0-`}--..--');
+});
